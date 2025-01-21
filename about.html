@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Про нас</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header>
+    <div class="container">
+    <h1>Про нас</h1>
+    <nav>
+        <ul>
+        <li><a href="index.html">Головна</a></li>
+        <li><a href="about.html">Про нас</a></li>
+        <li><a href="destinations.html">Напрямки</a></li>
+        <li><a href="contact.html">Контакти</a></li>
+        </ul>
+    </nav>
+    </div>
+</header>
+
+<main>
+    <section>
+    <h2>Наша місія</h2>
+    <p>Наша команда досвідчених мандрівників створила цей ресурс, щоб допомогти вам відкривати світ. Ми ділимося корисною інформацією, порадами та маршрутами для вашого комфорту.</p>
+    </section>
+    <section>
+    <img src="images/team.jpg" alt="Команда мандрівників">
+    </section>
+    <section id="reviews">
+        <h2>Відгуки мандрівників</h2>
+        <form id="review-form">
+        <input type="text" placeholder="Your Name" required />
+        <textarea placeholder="Your Review" required></textarea>
+        <input type="number" min="1" max="5" placeholder="Rating (1-5)" required />
+        <button type="submit">Надіслати</button>
+        </form>
+        <div id="review-carousel">
+        <!-- Reviews dynamically loaded here -->
+        </div>
+    </section>
+</main>
+
+
+<footer>
+    <script>
+        const reviews = [];
+        document.getElementById('review-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = e.target[0].value;
+        const content = e.target[1].value;
+        const rating = e.target[2].value;
+        reviews.push({ name, content, rating });
+        e.target.reset();
+        displayReviews();
+        });
+    
+        function displayReviews() {
+        const carousel = document.getElementById('review-carousel');
+        carousel.innerHTML = reviews.map(r => `<div><h4>${r.name}</h4><p>${r.content}</p><p>Rating: ${r.rating}/5</p></div>`).join('');
+        }
+    </script> 
+    <div class="container">
+    <p>&copy; 2025 Подорожі Світом</p>
+    </div>
+</footer>
+</body>
+</html>
