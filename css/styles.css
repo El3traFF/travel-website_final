@@ -1,0 +1,195 @@
+/* Загальний стиль */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+header {
+    background: #2c3e50;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+header h1 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #1abc9c;
+}
+
+.hero {
+    background: url('../images/hero.jpg') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin: 0 0 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+/* Контейнер для напрямків */
+.destinations {
+    display: grid; /* Використання CSS Grid */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Динамічні колонки */
+    gap: 20px; /* Відстань між блоками */
+    justify-content: center; /* Центрування напрямків */
+    padding: 20px;
+}
+
+/* Секція напрямку */
+.destination {
+    background: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 15px;
+}
+
+.destination img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.destination h3 {
+    font-size: 1.5rem;
+    margin: 15px 0 10px;
+}
+
+.destination p {
+    font-size: 1rem;
+    padding: 0 10px 20px;
+}
+
+/* Кнопка "Відкрити на карті" */
+.map-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #1abc9c;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.map-button:hover {
+    background-color: #16a085;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}
+
+/* Стиль для слайдера */
+.slider {
+    position: relative;
+    width: 100%;
+    height: 200px; /* Висота слайдера */
+    overflow: hidden;
+}
+
+.slider-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    transition: left 1s ease;
+}
+
+.slider-image.active {
+    left: 0;
+}
+
+.slider-image.prev {
+    left: -100%;
+}
+/* Стиль для слайдера */
+.slider {
+    position: relative;
+    width: 100%;
+    height: 200px; /* Висота слайдера */
+    overflow: hidden;
+}
+
+.slider-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    transition: left 1s ease;
+}
+
+.slider-image.active {
+    left: 0;
+}
+
+.slider-image.prev {
+    left: -100%;
+}
+
+@media (max-width: 768px) {
+    body {
+    font-size: 14px;
+    }
+    nav ul {
+    flex-direction: column;
+    }
+    .categories {
+    grid-template-columns: 1fr;
+    }
+}
